@@ -13,3 +13,5 @@ console.log(typeof temp);
 console.log(typeof location);
 
 
+
+

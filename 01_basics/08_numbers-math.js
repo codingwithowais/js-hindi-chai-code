@@ -27,7 +27,7 @@ const score = new Number(33);
 // console.log(Math.min(2 , 3, 5 , 10));
 // console.log(Math.max(2, 3 , 5 , 10));
 
-// console.log(Math.random()); // generates a random no. between [0 , 1]
+// console.log(Math.random()); // generates a random no. between [0 , 1)
 
 // formula to get a random number between [a , b]:
 
@@ -35,7 +35,8 @@ const score = new Number(33);
 
 let a = 20;
 let b  = 50;
-// console.log((a + Math.floor((b-a)*Math.random())));
+console.log((a + Math.floor((b-a+1)*Math.random()))); // formula to generate random number between [20 50].
+// extra 1 added to include both a and b
 
 
 

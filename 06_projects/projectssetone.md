@@ -17,3 +17,30 @@ boxes.forEach(function(box){
 });
 
 ```
+
+## Project 2 solution
+
+```javascript
+let result = document.getElementById('results');
+document.querySelector('form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  let weight = parseInt(document.getElementById('weight').value);
+  let height = parseInt(document.getElementById('height').value);
+  if (height == '' || isNaN(height) || height <= 0) {
+    result.innerHTML = `<span>Please enter a valid height</span>`;
+  }else if (weight == '' || isNaN(weight) || weight <= 0) {
+    result.innerHTML = `<span>Please enter a valid weight</span>`;
+  } else {
+    let bmi = (weight / ((height * height) / 10000)).toFixed(2);
+    if (bmi < 18.6) {
+      result.innerHTML = `<span>BMI is: ${bmi}: You are under weight
+      </span>`;
+    } else if (bmi >= 18.6 && bmi <= 24.9) {
+      result.innerHTML = `<span>BMI is: ${bmi}: You have normal bmi</span>`;
+    } else {
+      result.innerHTML = `<span>BMI is: ${bmi}: You are overweight</span>`;
+    }
+  }
+});
+
+```

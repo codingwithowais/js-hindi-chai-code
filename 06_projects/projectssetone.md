@@ -44,3 +44,12 @@ document.querySelector('form').addEventListener('submit', function (e) {
 });
 
 ```
+
+## Project 3 solution
+
+```javascript
+let clock = document.getElementById("clock");
+setInterval(function(){
+  clock.innerHTML = new Date().toLocaleTimeString();
+}, 1000);
+```

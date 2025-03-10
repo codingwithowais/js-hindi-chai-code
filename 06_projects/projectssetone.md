@@ -53,3 +53,35 @@ setInterval(function(){
   clock.innerHTML = new Date().toLocaleTimeString();
 }, 1000);
 ```
+
+## Project 5 solution
+
+```javascript
+function getRandomNum(){
+  return Math.floor(Math.random()*16);
+}
+
+function getRandomColor(){
+  let hex = "0123456789ABCDEF";
+  let color = "#";
+  for(let i = 0; i<6; i++){
+    color += hex[getRandomNum()];
+  }
+  return color;
+}
+let intervalId;
+function changeColor(){
+  if(!intervalId){
+    intervalId = setInterval(function(){
+      document.body.style.backgroundColor = getRandomColor();
+    },500);
+  }
+}
+function stopColor(){
+  clearInterval(intervalId);
+  intervalId = null;
+}
+document.getElementById('start').addEventListener('click' , changeColor);
+
+document.getElementById("stop").addEventListener('click' , stopColor);
+```

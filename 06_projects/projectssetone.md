@@ -85,3 +85,25 @@ document.getElementById('start').addEventListener('click' , changeColor);
 
 document.getElementById("stop").addEventListener('click' , stopColor);
 ```
+
+## Project 6
+
+```javascript
+window.addEventListener("keydown" , function(e){
+  document.querySelector(".key").innerHTML = 
+  `
+  <table>
+  <tr>
+    <th>Key</th>
+    <th>Key-Code</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.code == "Space"?"Space": e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+</table>
+  `
+})
+```
